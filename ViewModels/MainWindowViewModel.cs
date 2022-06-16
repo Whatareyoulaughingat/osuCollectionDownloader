@@ -24,7 +24,7 @@ namespace osuCollectionDownloader.ViewModels;
 public class MainWindowViewModel : ReactiveObject
 {
     [Reactive]
-    public string TitlebarName { get; set; } = "osu!CollectorGrabber";
+    public string TitlebarName { get; set; } = "osu! Collection Downloader";
 
     [Reactive]
     public string OsuDirectory { get; set; }
@@ -69,14 +69,14 @@ public class MainWindowViewModel : ReactiveObject
         StartDownload = ReactiveCommand.CreateFromTask(() => StartDownloadAsyncImpl(), canStartDownload);
         StartDownload.ThrownExceptions.Subscribe(ex =>
         {
-            TitlebarName = "osu!CollectorGrabber";
+            TitlebarName = "osu! Collection Downloader";
             Log.Error(ex, ex.Message);
         });
 
         StartCollectionDbDownload = ReactiveCommand.CreateFromTask(() => StartCollectionDbDownloadAsyncImpl(), canStartCollectionDbDownload);
         StartCollectionDbDownload.ThrownExceptions.Subscribe(ex =>
         {
-            TitlebarName = "osu!CollectorGrabber";
+            TitlebarName = "osu! Collection Downloader";
             Log.Error(ex, ex.Message);
         });
 
@@ -108,7 +108,7 @@ public class MainWindowViewModel : ReactiveObject
             beatmapCollection = await $"https://osucollector.com/api/collections/{CollectionId}/beatmapsv2?cursor={cursor}".GetJsonAsync<BeatmapCollection>();
 
             cursor = beatmapCollection.NextPageCursor;
-            TitlebarName = $"osu!CollectorGrabber - Downloading: {collectionInfo.Name}";
+            TitlebarName = $"osu! Collection Downloader - Downloading: {collectionInfo.Name}";
 
             foreach (Models.Beatmap beatmap in beatmapCollection.Beatmaps)
             {
@@ -151,7 +151,7 @@ public class MainWindowViewModel : ReactiveObject
         } while (beatmapCollection.HasMore);
 
         Log.Information($"Finished downloading {totalBeatmapCount} beatmaps.");
-        TitlebarName = "osu!CollectorGrabber";
+        TitlebarName = "osu! Collection Downloader";
     }
 
     private async Task StartCollectionDbDownloadAsyncImpl()
