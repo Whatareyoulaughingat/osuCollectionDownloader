@@ -65,21 +65,22 @@
         <Button Grid.Column="2"
 		        RenderOptions.EdgeMode="Aliased"
                 WindowChrome.IsHitTestVisibleInChrome="True"
-                IsTabStop="False"
-                Style="{DynamicResource MaterialDesignIconButton}"
+                Foreground="Transparent"
+                materialDesign:RippleAssist.IsDisabled="True"
+                Style="{StaticResource MaterialDesignIconButton}"
                 x:Name="MinimizeWindow">
 
-            <materialDesign:PackIcon Kind="WindowMinimize" />
+            <materialDesign:PackIcon Kind="WindowMinimize" Foreground="{DynamicResource PrimaryHueMidBrush}" />
         </Button>
 
         <Button Grid.Column="4"
 		        RenderOptions.EdgeMode="Aliased"
                 WindowChrome.IsHitTestVisibleInChrome="True"
-                IsTabStop="False"
-                Style="{DynamicResource MaterialDesignIconButton}"
+                Foreground="Transparent"
+                Style="{StaticResource MaterialDesignIconButton}"
                 x:Name="CloseWindow">
 
-            <materialDesign:PackIcon Kind="WindowClose" />
+            <materialDesign:PackIcon Kind="WindowClose" Foreground="{DynamicResource PrimaryHueMidBrush}" />
         </Button>
 
         <Label Height="30"
