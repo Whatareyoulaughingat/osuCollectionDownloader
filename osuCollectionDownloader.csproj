@@ -3,14 +3,13 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="CollectionManager" Version="1.0.8" />
-    <PackageReference Include="Flurl.Http" Version="4.0.0-pre1" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.6.0-ci205" />
+    <PackageReference Include="Flurl.Http" Version="4.0.0-pre2" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.0-ci218" />
     <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
     <PackageReference Include="ReactiveUI.Fody" Version="18.1.8" />
     <PackageReference Include="ReactiveUI.WPF" Version="18.1.8" />
