@@ -2,7 +2,7 @@
 
 namespace osuCollectionDownloader.Models;
 
-public record CollectionInfo(
+public record BeatmapCollectionInfo(
     [property: JsonPropertyName("name")] string Name,
     [property: JsonPropertyName("beatmapCount")] int BeatmapCount
 );

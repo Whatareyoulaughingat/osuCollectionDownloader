@@ -5,21 +5,21 @@ using System.Text.Json.Serialization;
 namespace osuCollectionDownloader.Models;
 
 public record Beatmap(
-    [property: JsonPropertyName("ar")] double Ar,
+    [property: JsonPropertyName("ar")] float Ar,
     [property: JsonPropertyName("mode_int")] int ModeInt,
     [property: JsonPropertyName("id")] int Id,
     [property: JsonPropertyName("beatmapset_id")] int BeatmapsetId,
-    [property: JsonPropertyName("difficulty_rating")] double DifficultyRating,
-    [property: JsonPropertyName("bpm")] double Bpm,
+    [property: JsonPropertyName("difficulty_rating")] float DifficultyRating,
+    [property: JsonPropertyName("bpm")] float Bpm,
     [property: JsonPropertyName("checksum")] string Checksum,
     [property: JsonPropertyName("version")] string Version,
-    [property: JsonPropertyName("cs")] double Cs,
-    [property: JsonPropertyName("drain")] double Drain,
-    [property: JsonPropertyName("count_spinners")] int CountSpinners,
-    [property: JsonPropertyName("count_sliders")] int CountSliders,
+    [property: JsonPropertyName("cs")] float Cs,
+    [property: JsonPropertyName("drain")] float Drain,
+    [property: JsonPropertyName("count_spinners")] short CountSpinners,
+    [property: JsonPropertyName("count_sliders")] short CountSliders,
     [property: JsonPropertyName("beatmapset")] Beatmapset Beatmapset,
-    [property: JsonPropertyName("count_circles")] int CountCircles,
-    [property: JsonPropertyName("accuracy")] double Accuracy,
+    [property: JsonPropertyName("count_circles")] short CountCircles,
+    [property: JsonPropertyName("accuracy")] float Accuracy,
     [property: JsonPropertyName("last_updated")] DateTime LastUpdated
 );
 
@@ -37,5 +37,5 @@ public record Beatmapset(
 public record BeatmapCollection(
     [property: JsonPropertyName("nextPageCursor")] int? NextPageCursor,
     [property: JsonPropertyName("hasMore")] bool HasMore,
-    [property: JsonPropertyName("beatmaps")] IEnumerable <Beatmap> Beatmaps
+    [property: JsonPropertyName("beatmaps")] IReadOnlyList<Beatmap> Beatmaps
 );
